@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import ToggleButton from './ToggleButton';
+import { JsxElement } from 'typescript';
 
 describe('renders toogle button', () => {
 
@@ -19,7 +20,7 @@ describe('renders toogle button', () => {
   test("toggle button click",()=>{
     const setIsOpen = jest.fn()
     render(<ToggleButton open={false} setOpen={setIsOpen} />);
-    const element = screen.getByTestId("plus").parentNode!
+    const element = screen.getByTestId("toggle")
     element.click()
     expect(setIsOpen).toHaveBeenCalledTimes(1)
   })

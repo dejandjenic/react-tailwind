@@ -12,7 +12,6 @@ test('renders blog post',async () => {
   .spyOn(React, 'useState')
   .mockImplementationOnce(() => [firstInitialState, () => null])
   .mockImplementationOnce(() => [secondInitialState, () => null])
-  .mockImplementation((x) => [x, () => null]); // ensures that the rest are unaffected
 
 
   const blog: IBlogPost = {
